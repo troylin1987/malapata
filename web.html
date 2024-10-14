@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirata Malapata</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 50px;
+        }
+        #pirata {
+            width: 200px;
+            height: auto;
+        }
+        #mensaje {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #555;
+        }
+        #secreto {
+            font-size: 2em;
+            font-weight: bold;
+            color: #d9534f;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>El Pirata Malapata te desafía</h1>
+    <img id="pirata" src="https://i.imgur.com/x9xEfwK.png" alt="Pirata Malapata">
+    
+    <p>Introduce la palabra secreta para revelar el número:</p>
+    
+    <input type="text" id="palabra" placeholder="Escribe aquí la palabra secreta">
+    <br>
+    <button onclick="comprobarPalabra()">Comprobar</button>
+    
+    <p id="mensaje"></p>
+    
+    <script>
+        function comprobarPalabra() {
+            const palabraSecreta = "ALAKAZAM";
+            const inputPalabra = document.getElementById('palabra').value.toUpperCase();
+            const mensaje = document.getElementById('mensaje');
+
+            if (inputPalabra === palabraSecreta) {
+                mensaje.innerHTML = "¡Felicidades, marinero astuto! El número secreto es: <span id='secreto'>8</span>";
+            } else {
+                mensaje.innerHTML = "¡Ja ja ja! ¿De verdad pensaste que te lo pondría tan fácil? Inténtalo de nuevo.";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
